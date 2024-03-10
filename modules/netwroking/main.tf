@@ -1,20 +1,20 @@
-resource "azurerm_virtual_network" "vnet" {
-  name                = var.vnet
+resource "azurerm_virtual_network" "vnet01" {
+  name                = "vnet01"
   location            = var.location
   resource_group_name = var.resource_group_name
-  address_space       = [var.vnet]
+  address_space       = [var.vnetcidr]
 }
 
 resource "azurerm_subnet" "websubnet" {
-  name                 = var.websubnet
-  virtual_network_name = var.vnet
+  name                 = "websubnet"
+  virtual_network_name = azurerm_virtual_network.vnet01.name
   resource_group_name = var.resource_group_name
-  address_prefixes     = [var.websubnet]
+  address_prefixes     = [var.websubnetcidr]
 }
 
 resource "azurerm_subnet" "appsubnet" {
-  name                 = var.appsubnet
-  virtual_network_name = var.vnet
+  name                 = "appsubnet"
+  virtual_network_name = azurerm_virtual_network.vnet01.name
   resource_group_name = var.resource_group_name
-  address_prefixes     = [var.appsubnet]
+  address_prefixes     = [var.appsubnetcidr]
 }
