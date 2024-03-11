@@ -1,6 +1,2 @@
-  variable "resource_group_name" {
-    default = "KPMG"
-  }
-  variable "location" {
-    default = "west us"
-  }
+  variable "resource_group_name" {}
+  variable "location" {}

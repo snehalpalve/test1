@@ -3,12 +3,12 @@ output "network_name" {
   description = "Name of the Virtual network"
 }
 
-output "websubnet_id" {
-  value = azurerm_subnet.web-subnet.id
+output "web_subnet_id" {
+  value = azurerm_subnet.websubnet.id
   description = "Id of websubnet in the network"
 }
 
-output "appsubnet_id" {
-  value = azurerm_subnet.app-subnet.id
+output "app_subnet_id" {
+  value = azurerm_subnet.appsubnet.id
   description = "Id of appsubnet in the network"
 }

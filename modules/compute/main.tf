@@ -11,7 +11,7 @@ resource "azurerm_network_interface" "web-net-interface" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.websubnet.id
+    subnet_id                     = var.web_subnet_id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -51,7 +51,7 @@ resource "azurerm_network_interface" "app-net-interface" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.appsubnet.id
+    subnet_id                     = var.app_subnet_id
     private_ip_address_allocation = "Dynamic"
   }
 }
