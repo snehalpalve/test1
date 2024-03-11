@@ -12,3 +12,8 @@ output "app_subnet_id" {
   value = azurerm_subnet.appsubnet.id
   description = "Id of appsubnet in the network"
 }
+
+output "db_subnet_id" {
+  value = azurerm_subnet.dbsubnet.id
+  description = "Id of dbsubnet in the network"
+}
