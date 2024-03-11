@@ -33,7 +33,6 @@ module "compute" {
   web_admin_password = var.web_admin_password
   app_admin_username = var.app_admin_username
   app_admin_password = var.app_admin_password
-
 }
 
 module "database" {
@@ -41,7 +40,6 @@ module "database" {
   location = module.resourcegroup.location_id
   resource_group_name = module.resourcegroup.resource_group_name
   primary_database = var.primary_database
-  primary_database_version = var.primary_database_version
-  primary_database_admin = var.primary_database_admin
-  primary_database_password = var.primary_database_password
+  administrator_login = var.administrator_login
+  administrator_login_password= var.administrator_login_password
 }
